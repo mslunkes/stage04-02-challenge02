@@ -9,7 +9,7 @@ Depois de criada a lista:
 - [ ]  Crie uma **função** que irá calcular a média das notas de cada aluno;
 - [ ]  Supondo que a média, para esse concurso é **7**, verifique **se** cada aluno obteve sucesso ou não em entrar no concurso e mostre uma mensagem na tela.*/
 
-const students = [
+let students = [
     {
       name: "Luiz",
       note1: 7.5,
@@ -31,11 +31,13 @@ const students = [
   ]
 
   function averageNote (note1, note2, note3) {
-    return ((note1 + note2 + note3)/3).toFixed(2)
+    let average = ((note1 + note2 + note3)/3).toFixed(2)
+    return average
   }
 
-  if (averageNote >= 7) {
-    alert(`A médida do aluno ${students.name}  é ` + averageNote `/n Parabéns, ${students.name}, você foi aprovado no curso `)
-  } else
-
+for( let name of students) {
+  IndividualAvarage = averageNote(name.note1, name.note2, name.note3)
+  let passOrNot = IndividualAvarage < 7 ? 'Infelizmente não foi dessa vez. Estude Mais' : 'Parabéns pela sua aprovação'
+}
+ alert( `A média de ${students.name} é ${IndividualAvarage}.${passOrNot}`)
   
